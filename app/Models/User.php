@@ -11,20 +11,6 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-
-// app/User.php
-
-/**
- * A user can have many messages
- *
- * @return \Illuminate\Database\Eloquent\Relations\HasMany
- */
-public function messages()
-{
-  return $this->hasMany(Message::class);
-}
-
-
     /**
      * The attributes that are mass assignable.
      *
@@ -58,4 +44,18 @@ public function messages()
             'password' => 'hashed',
         ];
     }
+
+
+    // app/User.php
+
+/**
+ * A user can have many messages
+ *
+ * @return \Illuminate\Database\Eloquent\Relations\HasMany
+ */
+public function messages()
+{
+  return $this->hasMany(Message::class);
+}
+
 }
